@@ -1,0 +1,61 @@
+import java.util.*;
+public class Main {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int row=1;
+        int num=1;
+        int space=-1;
+        int space1=n-1;
+        int a = 1;
+        while (row <= n) {
+
+             int l =1;
+            while(l<=space1){
+                System.out.print("  ");
+                l++;
+            }
+
+            int i =1;
+            int var1=a;
+           while(i<=num){
+                System.out.print(var1+" ");
+                var1--;
+                i++;
+            }
+
+            int j =1;
+            while(j<=space){
+                System.out.print("  ");
+                j++;
+            }
+
+            int k =1;
+            int var2=1;
+            if(row==1||row==n){
+                k=2;
+            }
+            while(k<=num){
+                System.out.print(var2+" ");
+                var2++;
+                k++;
+            }
+
+            row++;
+            if(row<=n/2+1){
+                space+=2;
+                space1-=2;
+                a++;
+                num++;
+            }
+            else{
+                space-=2;
+                space1+=2;
+                a--;
+                num--;
+            }
+            System.out.println();
+        }
+
+    }
+}
