@@ -1,0 +1,23 @@
+import java.util.*;
+public class Main {
+    public static void main(String args[]) {
+         Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int f =0;
+        int s = 1;
+        int row=1;
+        int sum = 0;
+        while(row<=n){
+            int i =1;
+            while (i <= row) {
+                sum = sum+f;
+                f=s;
+                s = sum;
+                System.out.print(sum+"\t");
+                i++;
+            }
+            row++;
+            System.out.println();
+            }
+    }
+}
