@@ -1,0 +1,48 @@
+import java.util.*;
+public class Main {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+        	
+		int row =1;
+		int space= 0;
+		int area=2*n+1;
+		int num=n-space;
+		int a=n;
+		
+		while(row<=2*n+1) {
+			int i =1;
+			while(i<=space) {
+				System.out.print("  ");
+				i++;
+			}
+			
+			int j=1;
+			num=a;
+			while(j<=area) {
+				if(j<=area/2) {
+					System.out.print(num+" ");
+					num--;
+				}
+				else {
+					System.out.print(num+" ");
+					num++;
+				}
+				j++;
+			}
+			
+			row++;
+			if(row<=n+1) {
+				space++;
+				area-=2;
+				a--;
+			}
+			else {
+				space--;
+				area+=2;
+				a++;
+			}
+			System.out.println();
+		}
+    }
+}
