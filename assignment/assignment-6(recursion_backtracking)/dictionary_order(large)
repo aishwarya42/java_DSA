@@ -1,0 +1,41 @@
+import java.util.*;
+public class Main {
+    public static void main(String args[]) {
+        // Your Code Here
+        Scanner sc = new Scanner(System.in);
+        String s = sc.next();
+          String str = s;
+        ArrayList<String> ll=new ArrayList<>();
+        perm(str,"",s,ll);
+        Collections.sort(ll);
+        for(int i=0;i<ll.size();i++) {
+            compare(s, ll, i);
+        }// System.out.println(ll);
+    }
+    public static void compare(String s,ArrayList<String> ll,int i ){
+        if(s.compareTo(ll.get(i))<0){
+            System.out.println(ll.get(i));
+        }
+    }
+    public static List<String> sort(ArrayList<String> ll ,int s, int p){
+        if(ll.get(s).compareTo(ll.get(p))>0){
+            Collections.swap(ll,s,p);
+        }
+        return ll;
+    }
+    public static void perm(String str, String ans,String s, ArrayList<String> ll){
+        if(str.length()==0){
+                if(ans.compareTo(s)>0 && ans.compareTo(str)>0){
+                    ll.add(ans);
+                }
+            return;
+            }
+        for(int i=0;i<str.length();i++) {
+            char ch = str.charAt(i);
+            String s1 = str.substring(0, i);
+            String s2 = str.substring(i + 1);
+            perm(s1 + s2, ans + ch,s,ll);
+        }
+    }
+
+    }
