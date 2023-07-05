@@ -1,0 +1,32 @@
+import java.util.*;
+public class Main {
+    public static void main(String args[]) {
+        // Your Code Here 
+         Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+        maze(0,0,n,m,"");
+        System.out.println();
+          System.out.println(count);
+
+    }
+    static int count=0;
+    public static void maze(int r, int c,int n, int m,String ans) {
+        if(r==n-1 && c==m-1){
+            count++;
+            System.out.print(ans+" ");
+            return;
+        }
+        if(r>=n || c>=m){
+            return;
+        }
+            maze(r + 1, c, n, m, ans + "V");
+            maze(r, c + 1, n, m, ans + "H");
+             maze(r + 1, c + 1, n, m, ans + "D");
+            
+           
+
+    }
+
+
+}
