@@ -1,0 +1,28 @@
+import java.util.*;
+public class Main {
+    public static void main(String args[]) {
+        // Your Code Here
+        Scanner sc = new Scanner(System.in);
+        int m = sc.nextInt();
+        int n = sc.nextInt();
+        String ans = "";
+        maze(m,n,0,ans);
+        System.out.println();
+         System.out.println(count);
+    }
+
+    static int count = 0;
+    public static void maze(int board,int dice,int curr, String ans){
+        if(curr==board){
+            System.out.print(ans+" ");
+            count++;
+            return;
+        }
+
+        for(int i=1;i<=dice;i++){
+            if(curr<=board){
+                maze(board,dice,curr+i,ans+i);
+            }
+        }
+    }
+}
