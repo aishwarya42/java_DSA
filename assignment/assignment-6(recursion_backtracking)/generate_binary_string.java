@@ -7,6 +7,7 @@ public class Main {
         while(t>0){
             String s = sc.next();
             wild_card(s,ans);
+             System.out.println();
             t--;
         }
     }
